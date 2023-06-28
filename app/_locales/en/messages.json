@@ -1533,6 +1533,9 @@
     "message": "Error with $1",
     "description": "$1 represents the name of the snap"
   },
+  "estimatedFee": {
+    "message": "Estimated fee"
+  },
   "ethGasPriceFetchWarning": {
     "message": "Backup gas price is provided as the main gas estimation service is unavailable right now."
   },
@@ -1587,6 +1590,9 @@
   },
   "feeAssociatedRequest": {
     "message": "A fee is associated with this request."
+  },
+  "feeDetails": {
+    "message": "Fee details"
   },
   "fiat": {
     "message": "Fiat",
@@ -1708,33 +1714,16 @@
     "message": "$1 hrs",
     "description": "$1 represents a number of hours"
   },
-  "gasTimingMinutes": {
-    "message": "$1 minutes",
-    "description": "$1 represents a number of minutes"
+  "gasTimingLow": {
+    "message": "Slow"
   },
   "gasTimingMinutesShort": {
     "message": "$1 min",
     "description": "$1 represents a number of minutes"
   },
-  "gasTimingNegative": {
-    "message": "Maybe in $1",
-    "description": "$1 represents an amount of time"
-  },
-  "gasTimingPositive": {
-    "message": "Likely in < $1",
-    "description": "$1 represents an amount of time"
-  },
-  "gasTimingSeconds": {
-    "message": "$1 seconds",
-    "description": "$1 represents a number of seconds"
-  },
   "gasTimingSecondsShort": {
     "message": "$1 sec",
     "description": "$1 represents a number of seconds"
-  },
-  "gasTimingVeryPositive": {
-    "message": "Very likely in < $1",
-    "description": "$1 represents an amount of time"
   },
   "gasUsed": {
     "message": "Gas used"
@@ -2294,6 +2283,9 @@
   },
   "metaMaskConnectStatusParagraphTwo": {
     "message": "The connection status button shows if the website you’re visiting is connected to your currently selected account."
+  },
+  "metamaskFees": {
+    "message": "MetaMask fees"
   },
   "metamaskInstitutionalVersion": {
     "message": "MetaMask Institutional Version"
@@ -3048,6 +3040,9 @@
   },
   "operationFailed": {
     "message": "Operation Failed"
+  },
+  "optimismFees": {
+    "message": "Optimism fees"
   },
   "optional": {
     "message": "Optional"
@@ -5002,9 +4997,6 @@
   },
   "transactionDetailGasHeading": {
     "message": "Estimated gas fee"
-  },
-  "transactionDetailGasInfoV2": {
-    "message": "estimated"
   },
   "transactionDetailGasTooltipConversion": {
     "message": "Learn more about gas fees"

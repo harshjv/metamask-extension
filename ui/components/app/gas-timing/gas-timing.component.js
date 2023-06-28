@@ -1,29 +1,30 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import BigNumber from 'bignumber.js';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import BigNumber from 'bignumber.js';
-
-import { GasEstimateTypes } from '../../../../shared/constants/gas';
-
-import { usePrevious } from '../../../hooks/usePrevious';
-import { I18nContext } from '../../../contexts/i18n';
-import { useGasFeeContext } from '../../../contexts/gasFee';
-
+import { useSelector } from 'react-redux';
+import { Box, Text } from '../../component-library';
+import {
+  Color,
+  Display,
+  FONT_WEIGHT,
+  TextColor,
+  TextVariant,
+  TypographyVariant,
+} from '../../../helpers/constants/design-system';
 import {
   getGasEstimateType,
   getGasFeeEstimates,
   getIsGasEstimatesLoading,
 } from '../../../ducks/metamask/metamask';
 
-import Typography from '../../ui/typography/typography';
-import {
-  TypographyVariant,
-  FONT_WEIGHT,
-} from '../../../helpers/constants/design-system';
-
-import { getGasFeeTimeEstimate } from '../../../store/actions';
 import { GAS_FORM_ERRORS } from '../../../helpers/constants/gas';
+import { GasEstimateTypes } from '../../../../shared/constants/gas';
+import { I18nContext } from '../../../contexts/i18n';
+import Typography from '../../ui/typography/typography';
+import { getGasFeeTimeEstimate } from '../../../store/actions';
+import { useGasFeeContext } from '../../../contexts/gasFee';
+import { usePrevious } from '../../../hooks/usePrevious';
 
 // Once we reach this second threshold, we switch to minutes as a unit
 const SECOND_CUTOFF = 90;
@@ -32,9 +33,9 @@ const SECOND_CUTOFF = 90;
 const toHumanReadableTime = (milliseconds = 1, t) => {
   const seconds = Math.ceil(milliseconds / 1000);
   if (seconds <= SECOND_CUTOFF) {
-    return t('gasTimingSeconds', [seconds]);
+    return t('gasTimingSecondsShort', [seconds]);
   }
-  return t('gasTimingMinutes', [Math.ceil(seconds / 60)]);
+  return t('gasTimingMinutesShort', [Math.ceil(seconds / 60)]);
 };
 export default function GasTiming({
   maxFeePerGas = 0,
@@ -115,8 +116,13 @@ export default function GasTiming({
 
   const { low = {}, medium = {}, high = {} } = gasFeeEstimates;
 
-  let text = '';
+  let text = t(estimateUsed || 'medium');
+  let time = '';
   let attitude = 'positive';
+
+  if (estimateUsed === 'low') {
+    text = t('gasTimingLow');
+  }
 
   // Anything medium or faster is positive
   if (
@@ -127,52 +133,64 @@ export default function GasTiming({
       Number(maxPriorityFeePerGas) < Number(high.suggestedMaxPriorityFeePerGas)
     ) {
       // Medium
-      text = t('gasTimingPositive', [
-        toHumanReadableTime(low.maxWaitTimeEstimate, t),
-      ]);
+      time = toHumanReadableTime(low.maxWaitTimeEstimate, t);
     } else {
       // High
-      text = t('gasTimingVeryPositive', [
-        toHumanReadableTime(high.minWaitTimeEstimate, t),
-      ]);
+      time = toHumanReadableTime(high.minWaitTimeEstimate, t);
     }
-  } else {
+  } else if (isUnknownLow) {
+    // If the user has chosen a value less than our low estimate,
+    // calculate a potential wait time
+
     if (estimateUsed === 'low') {
       attitude = 'negative';
     }
-    // If the user has chosen a value less than our low estimate,
-    // calculate a potential wait time
-    if (isUnknownLow) {
-      // If we didn't get any useful information, show the
-      // "unknown processing time" message
-      if (
-        !customEstimatedTime ||
-        customEstimatedTime === 'unknown' ||
-        customEstimatedTime?.upperTimeBound === 'unknown'
-      ) {
-        text = t('editGasTooLow');
-        attitude = 'negative';
-      } else {
-        text = t('gasTimingNegative', [
-          toHumanReadableTime(Number(customEstimatedTime?.upperTimeBound), t),
-        ]);
-      }
+    // If we didn't get any useful information, show the
+    // "unknown processing time" message
+    if (
+      !customEstimatedTime ||
+      customEstimatedTime === 'unknown' ||
+      customEstimatedTime?.upperTimeBound === 'unknown'
+    ) {
+      text = t('editGasTooLow');
+      attitude = 'negative';
     } else {
-      text = t('gasTimingNegative', [
-        toHumanReadableTime(low.maxWaitTimeEstimate, t),
-      ]);
+      time = toHumanReadableTime(
+        Number(customEstimatedTime?.upperTimeBound),
+        t,
+      );
     }
+  } else {
+    time = toHumanReadableTime(low.maxWaitTimeEstimate, t);
   }
 
+  const getColorFromAttitude = () => {
+    switch (attitude) {
+      case 'positive':
+        return TextColor.successDefault;
+      case 'warning':
+        return TextColor.warningDefault;
+      case 'negative':
+        return TextColor.errorDefault;
+      default:
+        return TextColor.successDefault;
+    }
+  };
+
   return (
-    <Typography
-      variant={TypographyVariant.H7}
-      className={classNames('gas-timing', {
-        [`gas-timing--${attitude}`]: attitude,
-      })}
-    >
-      {text}
-    </Typography>
+    <Box display={Display.Flex}>
+      <Text color={Color.textMuted} variant={TextVariant.bodyXs}>
+        {text}
+      </Text>
+
+      <Text
+        variant={TextVariant.bodyXs}
+        marginLeft={1}
+        color={getColorFromAttitude()}
+      >
+        <span data-testid="gas-timing-time">~{time}</span>
+      </Text>
+    </Box>
   );
 }
 
