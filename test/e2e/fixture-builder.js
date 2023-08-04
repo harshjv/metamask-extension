@@ -250,8 +250,14 @@ function defaultFixture() {
         advancedGasFee: null,
         currentLocale: 'en',
         dismissSeedBackUpReminder: true,
-        featureFlags: {
-          showIncomingTransactions: true,
+        featureFlags: {},
+        incomingTransactionsPreferences: {
+          '0x1': true,
+          '0xe708': false,
+          '0xfa': true,
+          '0x5': false,
+          '0xaa36a7': true,
+          '0xe704': true,
         },
         forgottenPassword: false,
         identities: {
@@ -319,9 +325,18 @@ function defaultFixture() {
         date: 1665507600000,
         version: '10.21.0',
       },
+      incomingTransactionsPreferences: {
+        '0x1': true,
+        '0xe708': false,
+        '0xfa': true,
+        '0x5': false,
+        '0xaa36a7': true,
+        '0xe704': true,
+      },
     },
   };
 }
+
 function onboardingFixture() {
   return {
     data: {
@@ -380,9 +395,8 @@ function onboardingFixture() {
         advancedGasFee: null,
         currentLocale: 'en',
         dismissSeedBackUpReminder: false,
-        featureFlags: {
-          showIncomingTransactions: true,
-        },
+        featureFlags: {},
+        incomingTransactionsPreferences: {},
         forgottenPassword: false,
         identities: {},
         infuraBlocked: false,

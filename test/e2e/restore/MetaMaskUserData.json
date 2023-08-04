@@ -16,9 +16,8 @@
     "advancedGasFee": null,
     "currentLocale": "en",
     "dismissSeedBackUpReminder": true,
-    "featureFlags": {
-      "showIncomingTransactions": true
-    },
+    "featureFlags": {},
+    "incomingTransactionsPreferences": {},
     "forgottenPassword": false,
     "frequentRpcListDetail": [
       {
