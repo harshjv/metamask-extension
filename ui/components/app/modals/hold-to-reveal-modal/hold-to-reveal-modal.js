@@ -4,8 +4,8 @@ import withModalProps from '../../../../helpers/higher-order-components/with-mod
 import Box from '../../../ui/box';
 import {
   Button,
-  BUTTON_SIZES,
-  BUTTON_VARIANT,
+  ButtonSize,
+  ButtonVariant,
   ButtonIcon,
   IconName,
   Text,
@@ -86,8 +86,8 @@ const HoldToRevealModal = ({
             </Text>,
             <Button
               key="hold-to-reveal-5"
-              variant={BUTTON_VARIANT.LINK}
-              size={BUTTON_SIZES.INHERIT}
+              variant={ButtonVariant.Link}
+              size={ButtonSize.Inherit}
               href={ZENDESK_URLS.NON_CUSTODIAL_WALLET}
               target="_blank"
               rel="noopener noreferrer"
@@ -131,8 +131,8 @@ const HoldToRevealModal = ({
             </Text>,
             <Button
               key="hold-to-reveal-5"
-              variant={BUTTON_VARIANT.LINK}
-              size={Size.auto}
+              variant={ButtonVariant.Link}
+              sie={Size.Auto}
               href={ZENDESK_URLS.NON_CUSTODIAL_WALLET}
               target="_blank"
               rel="noopener noreferrer"

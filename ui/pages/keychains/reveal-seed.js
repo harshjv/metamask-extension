@@ -25,13 +25,13 @@ import {
   Label,
   BannerAlert,
   Button,
+  ButtonVariant,
+  ButtonSize,
   TextField,
   HelpText,
   HelpTextSeverity,
-  BUTTON_VARIANT,
   TEXT_FIELD_SIZES,
   TEXT_FIELD_TYPES,
-  BUTTON_SIZES,
   Text,
 } from '../../components/component-library';
 import { useI18nContext } from '../../hooks/useI18nContext';
@@ -245,7 +245,7 @@ const RevealSeedPage = () => {
         <Button
           width={BLOCK_SIZES.FULL}
           size={Size.LG}
-          variant={BUTTON_VARIANT.SECONDARY}
+          variant={ButtonVariant.Secondary}
           onClick={() => {
             trackEvent({
               category: MetaMetricsEventCategory.Keys,
@@ -298,7 +298,7 @@ const RevealSeedPage = () => {
     return (
       <Box marginTop="auto">
         <Button
-          variant={BUTTON_VARIANT.SECONDARY}
+          variant={ButtonVariant.Secondary}
           width={BLOCK_SIZES.FULL}
           size={Size.LG}
           onClick={() => {
@@ -344,8 +344,8 @@ const RevealSeedPage = () => {
         {t('revealSeedWordsDescription1', [
           <Button
             key="srp-learn-srp"
-            variant={BUTTON_VARIANT.LINK}
-            size={BUTTON_SIZES.INHERIT}
+            variant={ButtonVariant.Link}
+            size={ButtonSize.Inherit}
             as="a"
             href={ZENDESK_URLS.SECRET_RECOVERY_PHRASE}
             target="_blank"
@@ -366,8 +366,8 @@ const RevealSeedPage = () => {
         {t('revealSeedWordsDescription2', [
           <Button
             key="srp-learn-more-non-custodial"
-            variant={BUTTON_VARIANT.LINK}
-            size={BUTTON_SIZES.INHERIT}
+            variant={ButtonVariant.Link}
+            size={ButtonSize.Inherit}
             as="a"
             href={ZENDESK_URLS.NON_CUSTODIAL_WALLET}
             target="_blank"

@@ -10,7 +10,7 @@ import {
 } from '../../../../helpers/constants/design-system';
 import Box from '../../../ui/box';
 import {
-  BUTTON_VARIANT,
+  ButtonVariant,
   Button,
   Icon,
   IconName,
@@ -22,7 +22,7 @@ import Preloader from '../../../ui/icon/preloader/preloader-icon.component';
 const SnapVersion = ({ version, url }) => {
   return (
     <Button
-      variant={BUTTON_VARIANT.LINK}
+      variant={ButtonVariant.Link}
       href={url}
       target="_blank"
       className="snap-version"

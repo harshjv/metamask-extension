@@ -6,7 +6,7 @@ import { useI18nContext } from '../../../hooks/useI18nContext';
 import {
   Box,
   Button,
-  BUTTON_VARIANT,
+  ButtonVariant,
   Text,
 } from '../../../components/component-library';
 import {
@@ -71,7 +71,7 @@ export default function InstitutionalEntityDonePage(props) {
         <Box display={Display.Flex} gap={4}>
           <Button
             block
-            variant={BUTTON_VARIANT.PRIMARY}
+            variant={ButtonVariant.Primary}
             data-testid="click-most-recent-overview-page"
             onClick={() => history.push(mostRecentOverviewPage)}
           >

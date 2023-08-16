@@ -23,8 +23,8 @@ import {
   IconName,
   IconSize,
   ButtonLink,
-  BUTTON_VARIANT,
-  BUTTON_SIZES,
+  ButtonVariant,
+  ButtonSize,
   Text,
 } from '../../../components/component-library';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
@@ -179,8 +179,8 @@ export default function CustodyAccountList({
             <Button
               data-testid="custody-account-cancel-button"
               block
-              variant={BUTTON_VARIANT.SECONDARY}
-              size={BUTTON_SIZES.LG}
+              variant={ButtonVariant.Secondary}
+              size={ButtonSize.Lg}
               className="custody-account-list__button"
               onClick={onCancel}
             >
@@ -189,8 +189,8 @@ export default function CustodyAccountList({
             <Button
               data-testid="custody-account-connect-button"
               block
-              variant={BUTTON_VARIANT.PRIMARY}
-              size={BUTTON_SIZES.LG}
+              variant={ButtonVariant.Primary}
+              size={ButtonSize.Lg}
               className="custody-account-list__button"
               disabled={disabled}
               onClick={() => onAddAccounts(custody)}

@@ -21,8 +21,8 @@ import {
   Label,
   ButtonLink,
   Button,
-  BUTTON_SIZES,
-  BUTTON_VARIANT,
+  ButtonSize,
+  ButtonVariant,
   Box,
   Text,
 } from '../../../components/component-library';
@@ -169,8 +169,8 @@ const ConfirmAddCustodianToken = () => {
           <Box display={Display.Flex} gap={4}>
             <Button
               block
-              variant={BUTTON_VARIANT.SECONDARY}
-              size={BUTTON_SIZES.LG}
+              variant={ButtonVariant.Secondary}
+              size={ButtonSize.Lg}
               data-testid="cancel-btn"
               onClick={async () => {
                 await dispatch(
@@ -197,7 +197,7 @@ const ConfirmAddCustodianToken = () => {
             <Button
               block
               data-testid="confirm-btn"
-              size={BUTTON_SIZES.LG}
+              size={ButtonSize.Lg}
               onClick={async () => {
                 setConnectError('');
                 setIsLoading(true);

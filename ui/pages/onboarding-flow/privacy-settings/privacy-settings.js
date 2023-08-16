@@ -12,8 +12,8 @@ import {
   PRIVACY_POLICY_LINK,
 } from '../../../../shared/lib/ui-utils';
 import {
-  BUTTON_SIZES,
-  BUTTON_VARIANT,
+  ButtonSize,
+  ButtonVariant,
   Box,
   Button,
   PickerNetwork,
@@ -217,8 +217,8 @@ export default function PrivacySettings() {
                     </div>
                   ) : (
                     <Button
-                      variant={BUTTON_VARIANT.SECONDARY}
-                      size={BUTTON_SIZES.LG}
+                      variant={ButtonVariant.Secondary}
+                      size={ButtonSize.Lg}
                       onClick={(e) => {
                         e.preventDefault();
                         dispatch(showModal({ name: 'ONBOARDING_ADD_NETWORK' }));
@@ -325,8 +325,8 @@ export default function PrivacySettings() {
             ])}
           />
           <Button
-            variant={BUTTON_VARIANT.PRIMARY}
-            size={BUTTON_SIZES.LG}
+            variant={ButtonVariant.Primary}
+            size={ButtonSize.Lg}
             onClick={handleSubmit}
             block
             marginTop={6}

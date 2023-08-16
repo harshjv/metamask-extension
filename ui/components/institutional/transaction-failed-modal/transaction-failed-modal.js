@@ -21,8 +21,8 @@ import {
   ModalHeader,
   ModalOverlay,
   Button,
-  BUTTON_VARIANT,
-  BUTTON_SIZES,
+  ButtonVariant,
+  ButtonSize,
 } from '../../component-library';
 
 const TransactionFailedModal = ({
@@ -77,8 +77,8 @@ const TransactionFailedModal = ({
         <Box display={Display.Flex}>
           <Button
             block
-            variant={BUTTON_VARIANT.PRIMARY}
-            size={BUTTON_SIZES.LG}
+            variant={ButtonVariant.Primary}
+            size={ButtonSize.Lg}
             onClick={handleSubmit}
           >
             {t('ok')}

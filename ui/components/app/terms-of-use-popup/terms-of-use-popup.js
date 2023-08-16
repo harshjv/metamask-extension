@@ -12,7 +12,7 @@ import {
 } from '../../../helpers/constants/design-system';
 import {
   Button,
-  BUTTON_VARIANT,
+  ButtonVariant,
   ButtonLink,
   Label,
   Text,
@@ -77,7 +77,7 @@ export default function TermsOfUsePopup({ onAccept }) {
       footer={
         <>
           <Button
-            variant={BUTTON_VARIANT.PRIMARY}
+            variant={ButtonVariant.Primary}
             className="terms-of-use__button"
             onClick={onAccept}
             disabled={!isTermsOfUseChecked}

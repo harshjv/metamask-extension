@@ -22,7 +22,7 @@ import {
 } from '../../../../shared/lib/ui-utils';
 import SRPQuiz from '../../../components/app/srp-quiz-modal/SRPQuiz';
 import {
-  BUTTON_SIZES,
+  ButtonSize,
   Button,
   Box,
   Text,
@@ -134,7 +134,7 @@ export default class SecurityTab extends PureComponent {
           <Button
             data-testid="reveal-seed-words"
             type="danger"
-            size={BUTTON_SIZES.LG}
+            size={ButtonSize.Lg}
             onClick={(event) => {
               event.preventDefault();
               this.context.trackEvent({

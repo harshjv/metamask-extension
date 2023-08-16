@@ -8,7 +8,7 @@ import {
   FlexDirection,
   TextVariant,
 } from '../../../helpers/constants/design-system';
-import { BUTTON_VARIANT, Box, Button, Text } from '../../component-library';
+import { ButtonVariant, Box, Button, Text } from '../../component-library';
 import JwtDropdown from '../jwt-dropdown';
 
 const JwtUrlForm = (props) => {
@@ -53,7 +53,7 @@ const JwtUrlForm = (props) => {
             <Text>{t('or')}</Text>
             <Button
               data-testid="addNewToken-btn"
-              variant={BUTTON_VARIANT.SECONDARY}
+              variant={ButtonVariant.Secondary}
               onClick={() => {
                 props.onJwtChange('');
                 setAddNewTokenClicked(true);

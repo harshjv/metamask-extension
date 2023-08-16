@@ -70,7 +70,7 @@ import {
   ///: END:ONLY_INCLUDE_IN
 } from '../../../helpers/constants/design-system';
 import {
-  BUTTON_VARIANT,
+  ButtonVariant,
   Button,
   ButtonLink,
   TagUrl,
@@ -325,7 +325,7 @@ const SignatureRequest = ({ txData }) => {
         {verifyingContract ? (
           <div>
             <Button
-              variant={BUTTON_VARIANT.LINK}
+              variant={ButtonVariant.Link}
               onClick={() => setShowContractDetails(true)}
               className="signature-request-content__verify-contract-details"
               data-testid="verify-contract-details"

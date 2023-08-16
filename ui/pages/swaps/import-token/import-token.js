@@ -15,14 +15,14 @@ import {
   Box,
   BannerAlert,
   Button,
-  BUTTON_VARIANT,
+  ButtonSize,
+  ButtonVariant,
   Modal,
   ModalContent,
   ModalHeader,
   AvatarToken,
   AvatarTokenSize,
   FormTextField,
-  BUTTON_SIZES,
   ModalOverlay,
 } from '../../../components/component-library';
 
@@ -78,17 +78,17 @@ export default function ImportToken({
           width={BlockSize.Full}
         >
           <Button
-            variant={BUTTON_VARIANT.SECONDARY}
+            variant={ButtonVariant.Secondary}
             block
-            size={BUTTON_SIZES.LG}
+            size={ButtonSize.Lg}
             onClick={onImportTokenCloseClick}
           >
             {t('cancel')}
           </Button>
           <Button
-            variant={BUTTON_VARIANT.PRIMARY}
+            variant={ButtonVariant.Primary}
             block
-            size={BUTTON_SIZES.LG}
+            size={ButtonSize.Lg}
             onClick={onImportTokenClick}
             data-testid="import-tokens-import-button"
           >

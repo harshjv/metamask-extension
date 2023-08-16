@@ -28,7 +28,7 @@ import {
 } from '../../../helpers/constants/design-system';
 import {
   Button,
-  BUTTON_VARIANT,
+  ButtonVariant,
   Modal,
   ModalHeader,
   ModalContent,
@@ -125,7 +125,7 @@ const CustodyConfirmLink = ({ hideModal }) => {
           </Text>
           <Button
             data-testid="custody-confirm-link__btn"
-            variant={BUTTON_VARIANT.PRIMARY}
+            variant={ButtonVariant.Primary}
             className="custody-confirm-link__btn"
             onClick={onClick}
           >

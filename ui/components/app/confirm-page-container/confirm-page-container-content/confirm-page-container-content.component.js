@@ -5,8 +5,8 @@ import { Tabs, Tab } from '../../../ui/tabs';
 import {
   ///: BEGIN:ONLY_INCLUDE_IN(build-main,build-beta,build-flask)
   Button,
-  BUTTON_SIZES,
-  BUTTON_VARIANT,
+  ButtonSize,
+  ButtonVariant,
   ///: END:ONLY_INCLUDE_IN
   BannerAlert,
 } from '../../../component-library';
@@ -279,8 +279,8 @@ export default class ConfirmPageContainerContent extends Component {
                     networkName,
                     ///: BEGIN:ONLY_INCLUDE_IN(build-main,build-beta,build-flask)
                     <Button
-                      variant={BUTTON_VARIANT.LINK}
-                      size={BUTTON_SIZES.INHERIT}
+                      variant={ButtonVariant.Link}
+                      size={ButtonSize.Inherit}
                       onClick={openBuyCryptoInPdapp}
                       key={`${nativeCurrency}-buy-button`}
                     >

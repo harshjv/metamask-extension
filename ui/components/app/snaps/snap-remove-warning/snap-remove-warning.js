@@ -9,8 +9,8 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
-  BUTTON_VARIANT,
-  BUTTON_SIZES,
+  ButtonVariant,
+  ButtonSize,
 } from '../../../component-library';
 
 import {
@@ -41,15 +41,15 @@ export default function SnapRemoveWarning({
         <Box width={BlockSize.Full} display={Display.Flex} gap={4}>
           <Button
             block
-            variant={BUTTON_VARIANT.SECONDARY}
-            size={BUTTON_SIZES.LG}
+            variant={ButtonVariant.Secondary}
+            size={ButtonSize.Lg}
             onClick={onCancel}
           >
             {t('nevermind')}
           </Button>
           <Button
             block
-            size={BUTTON_SIZES.LG}
+            size={ButtonSize.Lg}
             id="popoverRemoveSnapButton"
             danger
             onClick={onSubmit}

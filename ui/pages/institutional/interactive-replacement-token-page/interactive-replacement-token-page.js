@@ -24,8 +24,8 @@ import {
   IconSize,
   Box,
   Button,
-  BUTTON_VARIANT,
-  BUTTON_SIZES,
+  ButtonVariant,
+  ButtonSize,
   Text,
 } from '../../../components/component-library';
 import {
@@ -341,16 +341,16 @@ export default function InteractiveReplacementTokenPage({ history }) {
           <Box display={Display.Flex} gap={4}>
             <Button
               block
-              variant={BUTTON_VARIANT.SECONDARY}
-              size={BUTTON_SIZES.LG}
+              variant={ButtonVariant.Secondary}
+              size={ButtonSize.Lg}
               onClick={handleReject}
             >
               {t('reject')}
             </Button>
             <Button
               block
-              variant={BUTTON_VARIANT.PRIMARY}
-              size={BUTTON_SIZES.LG}
+              variant={ButtonVariant.Primary}
+              size={ButtonSize.Lg}
               onClick={handleApprove}
             >
               {error

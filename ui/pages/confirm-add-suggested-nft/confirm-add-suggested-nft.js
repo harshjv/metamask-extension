@@ -19,7 +19,7 @@ import {
 } from '../../../shared/constants/metametrics';
 import { AssetType } from '../../../shared/constants/transaction';
 import {
-  BUTTON_SIZES,
+  ButtonSize,
   ButtonIcon,
   ButtonIconSize,
   ButtonLink,
@@ -140,7 +140,7 @@ const ConfirmAddSuggestedNFT = () => {
             ) : (
               <ButtonLink
                 key={origin}
-                size={BUTTON_SIZES.INHERIT}
+                size={ButtonSize.Inherit}
                 href={link}
                 target="_blank"
               >
@@ -221,7 +221,7 @@ const ConfirmAddSuggestedNFT = () => {
                               href={blockExplorerLink}
                               title={address}
                               target="_blank"
-                              size={BUTTON_SIZES.INHERIT}
+                              size={ButtonSize.Inherit}
                             >
                               {name || symbol || shortenAddress(address)}
                             </ButtonLink>
@@ -286,7 +286,7 @@ const ConfirmAddSuggestedNFT = () => {
                             href={blockExplorerLink}
                             title={address}
                             target="_blank"
-                            size={BUTTON_SIZES.INHERIT}
+                            size={ButtonSize.Inherit}
                           >
                             {name || symbol || shortenAddress(address)}
                           </ButtonLink>

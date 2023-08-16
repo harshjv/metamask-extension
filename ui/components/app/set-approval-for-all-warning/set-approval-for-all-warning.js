@@ -17,7 +17,7 @@ import {
   Icon,
   IconName,
   Button,
-  BUTTON_VARIANT,
+  ButtonVariant,
   Text,
 } from '../../component-library';
 
@@ -42,7 +42,7 @@ const SetApproveForAllWarning = ({
     >
       <Button
         className="set-approval-for-all-warning__footer__approve-button"
-        variant={BUTTON_VARIANT.PRIMARY}
+        variant={ButtonVariant.Primary}
         danger
         onClick={onSubmit}
       >
@@ -50,7 +50,7 @@ const SetApproveForAllWarning = ({
       </Button>
       <Button
         className="set-approval-for-all-warning__footer__cancel-button"
-        variant={BUTTON_VARIANT.SECONDARY}
+        variant={ButtonVariant.Secondary}
         onClick={onCancel}
       >
         {t('reject')}

@@ -15,8 +15,8 @@ import {
   Display,
 } from '../../../../helpers/constants/design-system';
 import {
-  BUTTON_SIZES,
-  BUTTON_VARIANT,
+  ButtonSize,
+  ButtonVariant,
   Box,
   Button,
   Icon,
@@ -55,8 +55,8 @@ export default function SnapContentFooter({ snapName, snapId }) {
       >
         {t('snapContent', [
           <Button
-            variant={BUTTON_VARIANT.LINK}
-            size={BUTTON_SIZES.INHERIT}
+            variant={ButtonVariant.Link}
+            size={ButtonSize.Inherit}
             onClick={handleNameClick}
             key="button"
             ellipsis

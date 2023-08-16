@@ -6,8 +6,8 @@ import Popover from '../../../ui/popover';
 import {
   AvatarIcon,
   Button,
-  BUTTON_SIZES,
-  BUTTON_VARIANT,
+  ButtonSize,
+  ButtonVariant,
   ButtonLink,
   ButtonLinkSize,
   IconName,
@@ -122,8 +122,8 @@ export default function SnapPrivacyWarning({ onAccepted, onCanceled }) {
             display={DISPLAY.FLEX}
           >
             <Button
-              variant={BUTTON_VARIANT.SECONDARY}
-              size={BUTTON_SIZES.LG}
+              variant={ButtonVariant.Secondary}
+              size={ButtonSize.Lg}
               width={BLOCK_SIZES.FULL}
               className="snap-privacy-warning__cancel-button"
               onClick={onCanceled}
@@ -132,8 +132,8 @@ export default function SnapPrivacyWarning({ onAccepted, onCanceled }) {
               {t('cancel')}
             </Button>
             <Button
-              variant={BUTTON_VARIANT.PRIMARY}
-              size={BUTTON_SIZES.LG}
+              variant={ButtonVariant.Primary}
+              size={ButtonSize.Lg}
               width={BLOCK_SIZES.FULL}
               className="snap-privacy-warning__ok-button"
               onClick={onAccepted}

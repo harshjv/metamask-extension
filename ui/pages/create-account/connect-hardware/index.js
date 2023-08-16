@@ -21,8 +21,8 @@ import {
   LedgerTransportTypes,
 } from '../../../../shared/constants/hardware-wallets';
 import {
-  BUTTON_VARIANT,
-  BUTTON_SIZES,
+  ButtonVariant,
+  ButtonSize,
   Button,
   Text,
 } from '../../../components/component-library';
@@ -306,9 +306,9 @@ class ConnectHardwareForm extends Component {
               {this.context.t('troubleConnectingToLedgerU2FOnFirefox', [
                 // eslint-disable-next-line react/jsx-key
                 <Button
-                  variant={BUTTON_VARIANT.LINK}
+                  variant={ButtonVariant.Link}
                   href={ZENDESK_URLS.HARDWARE_CONNECTION}
-                  size={BUTTON_SIZES.INHERIT}
+                  size={ButtonSize.Inherit}
                   key="u2f-error-1"
                   as="a"
                   block={false}
@@ -325,9 +325,9 @@ class ConnectHardwareForm extends Component {
                 [
                   // eslint-disable-next-line react/jsx-key
                   <Button
-                    variant={BUTTON_VARIANT.LINK}
+                    variant={ButtonVariant.Link}
                     href={ZENDESK_URLS.LEDGER_FIREFOX_U2F_GUIDE}
-                    size={BUTTON_SIZES.INHERIT}
+                    size={ButtonSize.Inherit}
                     key="u2f-error-1"
                     as="a"
                     target="_blank"
@@ -349,7 +349,7 @@ class ConnectHardwareForm extends Component {
             this.state.device,
             // eslint-disable-next-line react/jsx-key
             <Button
-              variant={BUTTON_VARIANT.LINK}
+              variant={ButtonVariant.Link}
               href={ZENDESK_URLS.HARDWARE_CONNECTION}
               key="u2f-error-1"
             >

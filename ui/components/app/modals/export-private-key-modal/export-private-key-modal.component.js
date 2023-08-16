@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import withModalProps from '../../../../helpers/higher-order-components/with-modal-props';
 import Box from '../../../ui/box';
 import {
-  BUTTON_SIZES,
-  BUTTON_VARIANT,
+  ButtonSize,
+  ButtonVariant,
   BannerAlert,
   Button,
   Text,
@@ -178,8 +178,8 @@ const ExportPrivateKeyModal = ({
       >
         {!privateKey && (
           <Button
-            type={BUTTON_VARIANT.SECONDARY}
-            size={BUTTON_SIZES.LG}
+            type={ButtonVariant.Secondary}
+            size={ButtonSize.Lg}
             width={BLOCK_SIZES.HALF}
             marginRight={4}
             onClick={() => {
@@ -198,8 +198,8 @@ const ExportPrivateKeyModal = ({
         )}
         {privateKey ? (
           <Button
-            type={BUTTON_VARIANT.PRIMARY}
-            size={BUTTON_SIZES.LG}
+            type={ButtonVariant.Primary}
+            size={ButtonSize.Lg}
             width={BLOCK_SIZES.FULL}
             onClick={() => {
               hideModal();
@@ -209,8 +209,8 @@ const ExportPrivateKeyModal = ({
           </Button>
         ) : (
           <Button
-            type={BUTTON_VARIANT.PRIMARY}
-            size={BUTTON_SIZES.LG}
+            type={ButtonVariant.Primary}
+            size={ButtonSize.Lg}
             width={BLOCK_SIZES.HALF}
             onClick={() => {
               trackEvent({

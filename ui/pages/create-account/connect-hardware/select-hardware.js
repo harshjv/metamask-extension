@@ -8,8 +8,8 @@ import {
   ButtonIconSize,
   ButtonIcon,
   Button,
-  BUTTON_SIZES,
-  BUTTON_VARIANT,
+  ButtonSize,
+  ButtonVariant,
 } from '../../../components/component-library';
 import LogoLedger from '../../../components/ui/logo/logo-ledger';
 import LogoQRBased from '../../../components/ui/logo/logo-qr-based';
@@ -147,8 +147,8 @@ export default class SelectHardware extends Component {
   renderContinueButton() {
     return (
       <Button
-        variant={BUTTON_VARIANT.PRIMARY}
-        size={BUTTON_SIZES.LG}
+        variant={ButtonVariant.Primary}
+        size={ButtonSize.Lg}
         className="hw-connect__connect-btn"
         onClick={this.connect}
         disabled={!this.state.selectedDevice}
@@ -209,8 +209,8 @@ export default class SelectHardware extends Component {
           </Text>
         </Box>
         <Button
-          variant={BUTTON_VARIANT.PRIMARY}
-          size={BUTTON_SIZES.LG}
+          variant={ButtonVariant.Primary}
+          size={ButtonSize.Lg}
           onClick={() =>
             global.platform.openTab({
               url: 'https://google.com/chrome',
@@ -343,7 +343,7 @@ export default class SelectHardware extends Component {
               >
                 <Button
                   className="hw-connect__external-btn-first"
-                  variant={BUTTON_VARIANT.SECONDARY}
+                  variant={ButtonVariant.Secondary}
                   onClick={() => {
                     this.context.trackEvent({
                       category: MetaMetricsEventCategory.Navigation,
@@ -356,7 +356,7 @@ export default class SelectHardware extends Component {
                 </Button>
                 <Button
                   className="hw-connect__external-btn"
-                  variant={BUTTON_VARIANT.SECONDARY}
+                  variant={ButtonVariant.Secondary}
                   onClick={() => {
                     this.context.trackEvent({
                       category: MetaMetricsEventCategory.Navigation,
@@ -423,7 +423,7 @@ export default class SelectHardware extends Component {
             >
               <Button
                 className="hw-connect__external-btn-first"
-                variant={BUTTON_VARIANT.SECONDARY}
+                variant={ButtonVariant.Secondary}
                 onClick={() => {
                   this.context.trackEvent({
                     category: MetaMetricsEventCategory.Navigation,
@@ -436,7 +436,7 @@ export default class SelectHardware extends Component {
               </Button>
               <Button
                 className="hw-connect__external-btn"
-                variant={BUTTON_VARIANT.SECONDARY}
+                variant={ButtonVariant.Secondary}
                 onClick={() => {
                   this.context.trackEvent({
                     category: MetaMetricsEventCategory.Navigation,
@@ -502,7 +502,7 @@ export default class SelectHardware extends Component {
             >
               <Button
                 className="hw-connect__external-btn-first"
-                variant={BUTTON_VARIANT.SECONDARY}
+                variant={ButtonVariant.Secondary}
                 onClick={() => {
                   this.context.trackEvent({
                     category: MetaMetricsEventCategory.Navigation,
@@ -515,7 +515,7 @@ export default class SelectHardware extends Component {
               </Button>
               <Button
                 className="hw-connect__external-btn"
-                variant={BUTTON_VARIANT.SECONDARY}
+                variant={ButtonVariant.Secondary}
                 onClick={() => {
                   this.context.trackEvent({
                     category: MetaMetricsEventCategory.Navigation,
@@ -558,7 +558,7 @@ export default class SelectHardware extends Component {
             </p>
             <Button
               className="hw-connect__external-btn-first"
-              variant={BUTTON_VARIANT.SECONDARY}
+              variant={ButtonVariant.Secondary}
               onClick={() => {
                 this.context.trackEvent({
                   category: MetaMetricsEventCategory.Navigation,
@@ -571,7 +571,7 @@ export default class SelectHardware extends Component {
             </Button>
             <Button
               className="hw-connect__external-btn"
-              variant={BUTTON_VARIANT.SECONDARY}
+              variant={ButtonVariant.Secondary}
               onClick={() => {
                 this.context.trackEvent({
                   category: MetaMetricsEventCategory.Navigation,
@@ -593,7 +593,7 @@ export default class SelectHardware extends Component {
             </p>
             <Button
               className="hw-connect__external-btn-first"
-              variant={BUTTON_VARIANT.SECONDARY}
+              variant={ButtonVariant.Secondary}
               onClick={() => {
                 this.context.trackEvent({
                   category: MetaMetricsEventCategory.Navigation,
@@ -606,7 +606,7 @@ export default class SelectHardware extends Component {
             </Button>
             <Button
               className="hw-connect__external-btn"
-              variant={BUTTON_VARIANT.SECONDARY}
+              variant={ButtonVariant.Secondary}
               onClick={() => {
                 this.context.trackEvent({
                   category: MetaMetricsEventCategory.Navigation,
@@ -628,7 +628,7 @@ export default class SelectHardware extends Component {
             </p>
             <Button
               className="hw-connect__external-btn-first"
-              variant={BUTTON_VARIANT.SECONDARY}
+              variant={ButtonVariant.Secondary}
               onClick={() => {
                 this.context.trackEvent({
                   category: MetaMetricsEventCategory.Navigation,
@@ -641,7 +641,7 @@ export default class SelectHardware extends Component {
             </Button>
             <Button
               className="hw-connect__external-btn"
-              variant={BUTTON_VARIANT.SECONDARY}
+              variant={ButtonVariant.Secondary}
               onClick={() => {
                 this.context.trackEvent({
                   category: MetaMetricsEventCategory.Navigation,
@@ -661,7 +661,7 @@ export default class SelectHardware extends Component {
             <p className="hw-connect__QR-subtitle">{this.context.t('dcent')}</p>
             <Button
               className="hw-connect__external-btn-first"
-              variant={BUTTON_VARIANT.SECONDARY}
+              variant={ButtonVariant.Secondary}
               onClick={() => {
                 this.context.trackEvent({
                   category: MetaMetricsEventCategory.Navigation,
@@ -674,7 +674,7 @@ export default class SelectHardware extends Component {
             </Button>
             <Button
               className="hw-connect__external-btn"
-              variant={BUTTON_VARIANT.SECONDARY}
+              variant={ButtonVariant.Secondary}
               onClick={() => {
                 this.context.trackEvent({
                   category: MetaMetricsEventCategory.Navigation,

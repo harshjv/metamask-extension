@@ -28,8 +28,8 @@ import {
 import {
   Box,
   Button,
-  BUTTON_VARIANT,
-  BUTTON_SIZES,
+  ButtonVariant,
+  ButtonSize,
   Text,
 } from '../../../components/component-library';
 import SkipSRPBackup from './skip-srp-backup-popover';
@@ -155,8 +155,8 @@ export default function SecureYourWallet() {
       >
         <Button
           data-testid="secure-wallet-later"
-          variant={BUTTON_VARIANT.SECONDARY}
-          size={BUTTON_SIZES.LG}
+          variant={ButtonVariant.Secondary}
+          size={ButtonSize.Lg}
           block
           onClick={handleClickNotRecommended}
         >
@@ -164,7 +164,7 @@ export default function SecureYourWallet() {
         </Button>
         <Button
           data-testid="secure-wallet-recommended"
-          size={BUTTON_SIZES.LG}
+          size={ButtonSize.Lg}
           block
           onClick={handleClickRecommended}
         >

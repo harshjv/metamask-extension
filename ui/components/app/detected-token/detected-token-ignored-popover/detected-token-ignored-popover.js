@@ -14,9 +14,9 @@ import {
   ModalContent,
   ModalHeader,
   Button,
-  BUTTON_VARIANT,
+  ButtonSize,
+  ButtonVariant,
   Box,
-  BUTTON_SIZES,
 } from '../../../component-library';
 
 const DetectedTokenIgnoredPopover = ({
@@ -57,18 +57,18 @@ const DetectedTokenIgnoredPopover = ({
           <Button
             className="detected-token-ignored-popover__ignore-button"
             block
-            variant={BUTTON_VARIANT.SECONDARY}
+            variant={ButtonVariant.Secondary}
             onClick={onCancelIgnore}
-            size={BUTTON_SIZES.LG}
+            size={ButtonSize.Lg}
           >
             {t('cancel')}
           </Button>
           <Button
             className="detected-token-ignored-popover__import-button"
             block
-            variant={BUTTON_VARIANT.PRIMARY}
+            variant={ButtonVariant.Primary}
             onClick={handleClearTokensSelection}
-            size={BUTTON_SIZES.LG}
+            size={ButtonSize.Lg}
           >
             {t('confirm')}
           </Button>

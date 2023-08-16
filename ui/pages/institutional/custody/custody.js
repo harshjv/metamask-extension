@@ -18,8 +18,8 @@ import {
   Label,
   IconName,
   IconSize,
-  BUTTON_SIZES,
-  BUTTON_VARIANT,
+  ButtonSize,
+  ButtonVariant,
   Box,
   Text,
 } from '../../../components/component-library';
@@ -154,7 +154,7 @@ const CustodyPage = () => {
           </Box>
 
           <Button
-            size={BUTTON_SIZES.SM}
+            size={ButtonSize.Sm}
             data-testid="custody-connect-button"
             onClick={async () => {
               try {
@@ -468,8 +468,8 @@ const CustodyPage = () => {
               <Box display={Display.Flex} gap={4}>
                 <Button
                   block
-                  variant={BUTTON_VARIANT.SECONDARY}
-                  size={BUTTON_SIZES.LG}
+                  variant={ButtonVariant.Secondary}
+                  size={ButtonSize.Lg}
                   onClick={cancelConnectCustodianToken}
                 >
                   {t('cancel')}
@@ -477,7 +477,7 @@ const CustodyPage = () => {
                 <Button
                   block
                   data-testid="jwt-form-connect-button"
-                  size={BUTTON_SIZES.LG}
+                  size={ButtonSize.Lg}
                   onClick={async () => {
                     try {
                       setConnectError('');
@@ -654,8 +654,8 @@ const CustodyPage = () => {
           <Box as="footer" className="page-container__footer" padding={4}>
             <Button
               block
-              size={BUTTON_SIZES.LG}
-              type={BUTTON_VARIANT.SECONDARY}
+              size={ButtonSize.Lg}
+              type={ButtonVariant.Secondary}
               onClick={() => history.push(DEFAULT_ROUTE)}
             >
               {t('close')}

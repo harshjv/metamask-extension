@@ -9,13 +9,13 @@ import {
 import { I18nContext } from '../../../../../../contexts/i18n';
 
 import {
-  BUTTON_VARIANT,
   Button,
+  ButtonSize,
+  ButtonVariant,
   Icon,
   IconName,
   Text,
   Box,
-  BUTTON_SIZES,
 } from '../../../../../component-library';
 import {
   AlignItems,
@@ -47,11 +47,11 @@ const Accreditation = ({ fetchVia, address }) => {
         <Text variant={TextVariant.bodySm}>
           {t('transactionDecodingAccreditationVerified', [
             <Button
-              variant={BUTTON_VARIANT.LINK}
+              variant={ButtonVariant.Link}
               href={addressLink}
               externalLink
               key="accreditation-link-button"
-              size={BUTTON_SIZES.INHERIT}
+              size={ButtonSize.Inherit}
             >
               {fetchVia}
             </Button>,
