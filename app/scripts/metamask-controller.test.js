@@ -303,7 +303,7 @@ describe('MetaMaskController', function () {
 
       // add sinon method spies
       sandbox.spy(
-        metamaskController.keyringController,
+        metamaskController.coreKeyringController,
         'createNewVaultAndKeychain',
       );
       sandbox.spy(
@@ -349,7 +349,7 @@ describe('MetaMaskController', function () {
 
       it('adds 1 account', async function () {
         const keyringAccounts =
-          await metamaskController.keyringController.getAccounts();
+          await metamaskController.coreKeyringController.getAccounts();
         assert.equal(
           keyringAccounts[keyringAccounts.length - 1],
           '0xe18035bf8712672935fdb4e5e431b1a0183d2dfc',
@@ -370,7 +370,7 @@ describe('MetaMaskController', function () {
           metamaskController.preferencesController.store.getState().identities,
         );
         const addresses =
-          await metamaskController.keyringController.getAccounts();
+          await metamaskController.coreKeyringController.getAccounts();
 
         identities.forEach((identity) => {
           assert.ok(
@@ -401,7 +401,7 @@ describe('MetaMaskController', function () {
         await metamaskController.createNewVaultAndKeychain(password);
 
         assert(
-          metamaskController.keyringController.createNewVaultAndKeychain
+          metamaskController.coreKeyringController.createNewVaultAndKeychain
             .calledOnce,
         );
 
@@ -611,7 +611,7 @@ describe('MetaMaskController', function () {
       });
 
       it('should add the Trezor Hardware keyring', async function () {
-        sinon.spy(metamaskController.keyringController, 'addNewKeyring');
+        sinon.spy(metamaskController.coreKeyringController, 'addNewKeyring');
         await metamaskController
           .connectHardware(HardwareDeviceNames.trezor, 0)
           .catch(() => null);
@@ -620,14 +620,15 @@ describe('MetaMaskController', function () {
             KeyringType.trezor,
           );
         assert.deepEqual(
-          metamaskController.keyringController.addNewKeyring.getCall(0).args,
+          metamaskController.coreKeyringController.addNewKeyring.getCall(0)
+            .args,
           [KeyringType.trezor],
         );
         assert.equal(keyrings.length, 1);
       });
 
       it('should add the Ledger Hardware keyring', async function () {
-        sinon.spy(metamaskController.keyringController, 'addNewKeyring');
+        sinon.spy(metamaskController.coreKeyringController, 'addNewKeyring');
         await metamaskController
           .connectHardware(HardwareDeviceNames.ledger, 0)
           .catch(() => null);
@@ -636,7 +637,8 @@ describe('MetaMaskController', function () {
             KeyringType.ledger,
           );
         assert.deepEqual(
-          metamaskController.keyringController.addNewKeyring.getCall(0).args,
+          metamaskController.coreKeyringController.addNewKeyring.getCall(0)
+            .args,
           [KeyringType.ledger],
         );
         assert.equal(keyrings.length, 1);
@@ -734,13 +736,13 @@ describe('MetaMaskController', function () {
         windowOpenStub.returns(noop);
 
         addNewAccountStub = sinon.stub(
-          metamaskController.keyringController,
+          metamaskController.coreKeyringController,
           'addNewAccount',
         );
         addNewAccountStub.returns('0x123');
 
         getAccountsStub = sinon.stub(
-          metamaskController.keyringController,
+          metamaskController.coreKeyringController,
           'getAccounts',
         );
         // Need to return different address to mock the behavior of
@@ -767,8 +769,8 @@ describe('MetaMaskController', function () {
 
       afterEach(function () {
         window.open.restore();
-        metamaskController.keyringController.addNewAccount.restore();
-        metamaskController.keyringController.getAccounts.restore();
+        metamaskController.coreKeyringController.addNewAccount.restore();
+        metamaskController.coreKeyringController.getAccounts.restore();
         metamaskController.preferencesController.setAddresses.restore();
         metamaskController.preferencesController.setSelectedAddress.restore();
         metamaskController.preferencesController.setAccountLabel.restore();
@@ -783,11 +785,13 @@ describe('MetaMaskController', function () {
       });
 
       it('should call keyringController.addNewAccount', async function () {
-        assert(metamaskController.keyringController.addNewAccount.calledOnce);
+        assert(
+          metamaskController.coreKeyringController.addNewAccount.calledOnce,
+        );
       });
 
       it('should call keyringController.getAccounts ', async function () {
-        assert(metamaskController.keyringController.getAccounts.called);
+        assert(metamaskController.coreKeyringController.getAccounts.called);
       });
 
       it('should call preferencesController.setAddresses', async function () {
@@ -839,7 +843,7 @@ describe('MetaMaskController', function () {
         await metamaskController.createNewVaultAndKeychain('password');
         await metamaskController.addNewAccount(1);
         const getAccounts =
-          await metamaskController.keyringController.getAccounts();
+          await metamaskController.coreKeyringController.getAccounts();
         assert.equal(getAccounts.length, 2);
       });
     });
@@ -906,7 +910,7 @@ describe('MetaMaskController', function () {
         };
         sinon.stub(metamaskController.preferencesController, 'removeAddress');
         sinon.stub(metamaskController.accountTracker, 'removeAccount');
-        sinon.stub(metamaskController.keyringController, 'removeAccount');
+        sinon.stub(metamaskController.coreKeyringController, 'removeAccount');
         sinon.stub(metamaskController, 'removeAllAccountPermissions');
         sinon
           .stub(
@@ -919,7 +923,7 @@ describe('MetaMaskController', function () {
       });
 
       afterEach(function () {
-        metamaskController.keyringController.removeAccount.restore();
+        metamaskController.coreKeyringController.removeAccount.restore();
         metamaskController.accountTracker.removeAccount.restore();
         metamaskController.preferencesController.removeAddress.restore();
         metamaskController.removeAllAccountPermissions.restore();
@@ -944,7 +948,7 @@ describe('MetaMaskController', function () {
       });
       it('should call keyringController.removeAccount', async function () {
         assert(
-          metamaskController.keyringController.removeAccount.calledWith(
+          metamaskController.coreKeyringController.removeAccount.calledWith(
             addressToRemove,
           ),
         );
