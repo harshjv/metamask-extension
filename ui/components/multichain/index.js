@@ -4,6 +4,7 @@ export { AccountListMenu } from './account-list-menu';
 export { AccountPicker } from './account-picker';
 export { ActivityListItem } from './activity-list-item';
 export { AppHeader } from './app-header';
+export { BalanceOverview } from './balance-overview';
 export { DetectedTokensBanner } from './detected-token-banner';
 export { GlobalMenu } from './global-menu';
 export { ImportTokenLink } from './import-token-link';
