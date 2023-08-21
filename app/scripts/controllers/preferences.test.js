@@ -25,6 +25,7 @@ describe('preferences controller', function () {
       tokenListController,
       onInfuraIsBlocked: sinon.spy(),
       onInfuraIsUnblocked: sinon.spy(),
+      onAccountRemoved: sinon.spy(),
     });
   });
 

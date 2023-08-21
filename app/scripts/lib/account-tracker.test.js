@@ -1,4 +1,5 @@
 import EventEmitter from 'events';
+import sinon from 'sinon';
 
 import { SINGLE_CALL_BALANCES_ADDRESS } from '../constants/contracts';
 
@@ -70,6 +71,7 @@ describe('Account Tracker', () => {
           getState: noop,
         },
       },
+      onAccountRemoved: sinon.spy(),
     });
   });
 
