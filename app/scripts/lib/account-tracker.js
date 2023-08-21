@@ -56,7 +56,7 @@ export default class AccountTracker {
    * @param {object} opts.blockTracker - A block tracker, which emits events for each new block
    * @param {Function} opts.getCurrentChainId - A function that returns the `chainId` for the current global network
    * @param {Function} opts.getNetworkIdentifier - A function that returns the current network
-   * @param {Function} opts.onAccountRemoved - A callback function to be called when an account is removed
+   * @param {Function} opts.onAccountRemoved - Allows subscribing to keyring controller accountRemoved event
    */
   constructor(opts = {}) {
     const initState = {
