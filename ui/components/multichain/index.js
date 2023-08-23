@@ -20,3 +20,4 @@ export { ImportNftsModal } from './import-nfts-modal';
 export { AccountDetailsMenuItem, ViewExplorerMenuItem } from './menu-items';
 export { ImportTokensModal } from './import-tokens-modal';
 export { SelectActionModal } from './select-action-modal';
+export { SelectActionModalItem } from './select-action-modal-item';
