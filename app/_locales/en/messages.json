@@ -3759,6 +3759,9 @@
   "selectAnAccount": {
     "message": "Select an account"
   },
+    "selectAnAction": {
+    "message": "Select an action"
+  },
   "selectAnAccountAlreadyConnected": {
     "message": "This account has already been connected to MetaMask"
   },
